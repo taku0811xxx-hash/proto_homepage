@@ -3,14 +3,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { posts } from '../data';
 
-// --- SEOロジック: 新ドメインでメタデータを生成 ---
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const post = posts.find((p) => p.id === params.id);
   if (!post) return {};
-
   const description = post.content.substring(0, 120).replace(/\n/g, '') + '...';
   const siteUrl = "https://proto-visual.com";
-
   return {
     title: `${post.title} | PROTO.`,
     description: description,
@@ -21,34 +18,20 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
       url: `${siteUrl}/blog/${post.id}`,
       siteName: 'PROTO.',
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: description,
-    },
   };
 }
 
 export default function BlogDetailPage({ params }: { params: { id: string } }) {
   const post = posts.find((p) => p.id === params.id);
-
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
 
   const siteUrl = "https://proto-visual.com";
-
-  // 構造化データ（JSON-LD）
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
     "datePublished": post.date.replace(/\./g, '-'),
-    "author": {
-      "@type": "Person",
-      "name": "Proto",
-      "url": siteUrl
-    },
+    "author": { "@type": "Person", "name": "Proto", "url": siteUrl },
     "description": post.content.substring(0, 160).replace(/\n/g, ''),
   };
 
@@ -80,7 +63,12 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
           </header>
 
           <div className="blog-content">
-            <div className="text-[#333333] leading-[2.1] text-[16px] md:text-[18px] font-medium whitespace-pre-wrap break-words">
+            {/* styled-jsxの代わりに、Tailwindのクラスで長文を美しく整えます。
+              leading-[2.2] = 行間を広げて可読性アップ
+              tracking-wide = 文字間を調整
+              whitespace-pre-wrap = 改行を正しく表示
+            */}
+            <div className="text-[#333333] leading-[2.2] text-[16px] md:text-[18px] font-medium whitespace-pre-wrap break-words tracking-wide [font-feature-settings:'palt']">
               {post.content}
             </div>
           </div>
@@ -93,16 +81,6 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
           </Link>
         </div>
       </div>
-
-      <style jsx>{`
-        .blog-content {
-          font-feature-settings: "palt";
-          letter-spacing: 0.03em;
-        }
-        .blog-content :global(div) {
-          margin-bottom: 2.5em;
-        }
-      `}</style>
     </main>
   );
 }
