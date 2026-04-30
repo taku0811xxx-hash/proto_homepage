@@ -17,7 +17,7 @@ export default function Templates() {
   return (
     <section id="models" className="py-40 px-8 md:px-24 bg-[#080808]">
       <div className="max-w-7xl mx-auto text-white">
-        <h2 className="text-5xl md:text-7xl font-black tracking-tighter italic uppercase mb-20 text-center">Select Your Template.</h2>
+        <h2 className="text-5xl md:text-7xl font-black tracking-tighter italic uppercase mb-20 text-center">Select　Template.</h2>
         <div className="grid md:grid-cols-2 gap-12 text-left">
           {templates.map((model, i) => (
             <motion.div 
