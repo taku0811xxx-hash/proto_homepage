@@ -1,6 +1,16 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+
+/**
+ * 17枚の写真スライドショー設定
+ * public/images/visual/ フォルダ内に
+ * photo1.JPG 〜 photo17.JPG を配置してください。
+ */
+const totalPhotos = 17;
+const visualImages = Array.from({ length: totalPhotos }, (_, i) => `/images/visual/photo${i + 1}.JPG`);
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -11,7 +21,7 @@ const containerVariants: Variants = {
 };
 
 const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 50 },
   visible: { 
     opacity: 1, 
     y: 0, 
@@ -19,90 +29,184 @@ const fadeInUp: Variants = {
   }
 };
 
+const fadeVariants: Variants = {
+  initial: { opacity: 0 },
+  animate: { 
+    opacity: 1, 
+    transition: { duration: 1.0, ease: "easeInOut" }
+  },
+  exit: { 
+    opacity: 0, 
+    transition: { duration: 0.8, ease: "easeInOut" } 
+  }
+};
+
 export default function Services() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // 2.5秒ごとに写真を切り替えるロジック
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % visualImages.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, [visualImages.length]);
+
   return (
-    <>
-      {/* Visual Section */}
-      <section id="visual" className="py-40 px-8 md:px-24 bg-[#080808] border-t border-white/10 text-white">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={containerVariants} className="max-w-7xl mx-auto">
-          <motion.div variants={fadeInUp} className="mb-24">
-            <span className="text-[#007AFF] font-bold text-xs tracking-[0.4em] uppercase mb-4 block">Section 01 / 撮影</span>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">
-              心に響く、<br />
-              <span className="text-[#007AFF]">映像と写真の表現力。</span>
-              <span className="block text-sm md:text-xl font-bold text-[#666] mt-4 italic uppercase tracking-[0.2em]">Visual Production</span>
+    <section className="bg-[#050505] text-white">
+      
+      {/* 01. Visual Production (撮影セクション) */}
+      <section id="visual" className="py-40 px-8 md:px-24 border-t border-white/10 overflow-hidden">
+        <motion.div 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true, margin: "-100px" }} 
+          variants={containerVariants} 
+          className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center"
+        >
+          <motion.div variants={fadeInUp}>
+            <span className="text-[#007AFF] font-bold text-xs tracking-[0.4em] uppercase mb-6 block">Service 01 / Visual</span>
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-none">
+              一瞬を、<br />
+              <span className="text-[#007AFF]">永遠の資産に。</span>
             </h2>
+            <p className="text-[#BBBBBB] text-lg leading-relaxed mb-10 font-medium">
+              テレビ局の報道現場で培った「一瞬を逃さない」撮影技術。映画のような質感で、家族の記憶からビジネスの信頼感を高めるポートレート、高品位なPR動画まで、プロの機材と視点で記録します。
+            </p>
+            <div className="grid grid-cols-1 gap-6 text-white">
+              {[
+                { title: "家族・ライフイベント", tags: "七五三 / 記念撮影 / イベント" },
+                { title: "ビジネス・プロフィール", tags: "ポートレート / コーポレート / ブランディング" },
+                { title: "ブランド・映像制作", tags: "PR動画制作 / WEB素材撮影" },
+              ].map((item, i) => (
+                <div key={i} className="border-l border-[#007AFF]/30 pl-6 group hover:border-[#007AFF] transition-colors">
+                  <h3 className="text-lg font-bold mb-1">{item.title}</h3>
+                  <span className="text-[10px] font-bold text-[#666] uppercase tracking-[0.2em]">{item.tags}</span>
+                </div>
+              ))}
+            </div>
           </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              { title: "家族・ライフイベント", desc: "七五三やお誕生日会など、家族のたいせつな思い出を記録。映画のワンシーンのように美しく、いつまでも色褪せない記憶を残します。", tags: "記念撮影 / キッズ / イベント" },
-              { title: "ビジネス・プロフィール", desc: "会社プロフィール写真や活動風景を撮影。個人の信頼を視覚化し、ビジネスチャンスを広げる第一印象を構築します。", tags: "ポートレート / コーポレート / ブランディング" },
-              { title: "ブランド・WEB素材", desc: "ホームページ用の素材撮影。TV局品質の映像制作も含め、ブランドの魅力を最大化するビジュアルを提供します。", tags: "WEB素材 / PR動画制作" },
-            ].map((item, i) => (
-              <motion.div key={i} variants={fadeInUp} whileHover={{ y: -10 }} className="group border-l border-white/10 pl-8 hover:border-[#007AFF] transition-colors">
-                <h3 className="text-xl font-bold mb-6 tracking-tight">{item.title}</h3>
-                <p className="text-[#BBBBBB] text-sm md:text-base leading-loose font-medium mb-4">{item.desc}</p>
-                <span className="text-[10px] font-bold text-[#666666] uppercase tracking-widest">{item.tags}</span>
+
+          {/* スライドショー表示エリア */}
+          <motion.div variants={fadeInUp} className="relative aspect-video bg-[#111] border border-white/10 overflow-hidden rounded-sm shadow-xl group">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImageIndex}
+                variants={fadeVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="absolute inset-0"
+              >
+                <Image
+                  src={visualImages[currentImageIndex]}
+                  alt={`PROTO. Visual Sample ${currentImageIndex + 1}`}
+                  fill
+                  className="object-cover"
+                  priority={currentImageIndex === 0}
+                  sizes="(max-w-7xl) 50vw, 100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </motion.div>
-            ))}
+            </AnimatePresence>
+            <div className="absolute bottom-4 left-4 z-20 flex gap-2 items-center bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">
+              <span className="text-[10px] font-mono text-white/70">
+                {String(currentImageIndex + 1).padStart(2, '0')} / {String(visualImages.length).padStart(2, '0')}
+              </span>
+            </div>
+            <span className="absolute bottom-4 right-4 text-[#F5F5F5]/30 font-black text-6xl italic group-hover:text-[#007AFF]/50 transition-colors duration-700 select-none z-10">PHOTO</span>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* 02. Web Development (Web制作セクション) */}
+      <section id="web" className="py-40 px-8 md:px-24 bg-[#080808]">
+        <motion.div 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true, margin: "-100px" }} 
+          variants={containerVariants} 
+          className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center"
+        >
+          <motion.div variants={fadeInUp} className="order-2 md:order-1 relative aspect-video bg-[#111] border border-white/10 flex items-center justify-center overflow-hidden group">
+            <span className="text-[#1a1a1a] font-black text-7xl md:text-9xl italic group-hover:text-[#007AFF]/20 transition-colors duration-700 select-none">WEB</span>
+            <div className="absolute inset-0 bg-gradient-to-bl from-[#007AFF]/5 to-transparent"></div>
+          </motion.div>
+          <motion.div variants={fadeInUp} className="order-1 md:order-2">
+            <span className="text-[#007AFF] font-bold text-xs tracking-[0.4em] uppercase mb-6 block">Service 02 / Web</span>
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-none">
+              思考を、<br />
+              <span className="text-[#007AFF]">構造へ落とし込む。</span>
+            </h2>
+            <p className="text-[#BBBBBB] text-lg leading-relaxed mb-10 font-medium">
+              文章作成まで「丸投げ」でOK。テレビ局仕込みの取材力を活かし、あなたも気づかなかったお店の魅力を論理的に言語化。Next.jsを用いた超高速なサイト構築で、集客の土台を作ります。
+            </p>
+            <div className="grid grid-cols-1 gap-8">
+              {[
+                { title: "【完全丸投げOK】文章作成の代行", desc: "基本情報からキャッチコピーや紹介文をすべて構築。忙しいオーナーの手を止めることはありません。" },
+                { title: "【逆取材スタイル】強みの発見", desc: "報道現場で培った取材力を活かし、お店の本当の価値を深掘り。第三者視点での納得感を生み出します。" },
+                { title: "戦略的SEO・論理的設計", desc: "単なるデザインではなく、Next.jsによる高速表示と最新のSEO指標に基づいた構造を構築します。" }
+              ].map((card, i) => (
+                <div key={i} className="group cursor-default">
+                  <h3 className="text-lg font-bold mb-2 flex items-center gap-3 text-white">
+                    <span className="w-1 h-1 bg-[#007AFF]"></span>{card.title}
+                  </h3>
+                  <p className="text-[#999] text-sm leading-relaxed">{card.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* 03. Total Branding (セット販売セクション) */}
+      <section id="branding" className="py-40 px-8 md:px-24 bg-[#007AFF] relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/5 text-[20vw] font-black italic whitespace-nowrap select-none pointer-events-none uppercase">
+          Complete
+        </div>
+
+        <motion.div 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true }} 
+          variants={fadeInUp}
+          className="max-w-4xl mx-auto text-center text-white relative z-10"
+        >
+          <span className="text-black font-bold text-[10px] tracking-[0.5em] uppercase mb-8 inline-block bg-white px-4 py-1">Best Choice for Business</span>
+          <h2 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]">
+            表現と機能を、<br />
+            ひとつに。
+          </h2>
+          <p className="text-white/90 text-xl md:text-2xl leading-relaxed mb-12 font-bold">
+            写真がない、素材がない。そんな方のための「全部入り」プラン。<br />
+            撮影とWeb制作を同時進行し、ブランドの熱量を100%再現します。
+          </p>
+          
+          <div className="bg-black/20 p-8 md:p-12 backdrop-blur-xl border border-white/30 text-left rounded-sm shadow-2xl">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6 border-b border-white/20 pb-8 text-white">
+              <h3 className="text-2xl md:text-3xl font-black italic uppercase tracking-tighter">Visual + Web Bundle</h3>
+              <div className="text-xs font-bold tracking-widest bg-white text-[#007AFF] px-4 py-2 uppercase">推奨プラン</div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-10">
+              <div className="space-y-4 text-sm leading-loose text-white/80 font-medium">
+                <p>撮影とサイト制作を一貫して行うことで、デザインと素材の「ズレ」をゼロにします。</p>
+                <p>一貫したトーン＆マナーで、圧倒的な信頼感をもたらす最強の選択肢です。</p>
+              </div>
+              <ul className="space-y-3">
+                {["プロによる素材撮影一式", "全ページ文章作成（丸投げOK）", "Next.js 高速サイト構築", "ドメイン・保守管理サポート"].map((list, i) => (
+                  <li key={i} className="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-white">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {list}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </motion.div>
       </section>
 
-      {/* Web Section */}
-      <section id="web" className="py-40 px-8 md:px-24 bg-[#050505] text-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="mb-16">
-            <span className="text-[#007AFF] font-bold text-xs tracking-[0.4em] uppercase mb-4 block">Section 02 / 制作</span>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">
-              素材を渡す、あとは丸投げ。<br />
-              <span className="text-[#007AFF]">お店の真価を言語化します。</span>
-            </h2>
-          </motion.div>
-
-          {/* リード文の追加 */}
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="max-w-3xl text-[#BBBBBB] text-lg md:text-xl leading-relaxed font-medium mb-24">
-            ホームページを作りたいけれど、文章を考える時間がない。自分の店の強みがどこにあるのか、客観的にわからない。そんな悩みは、すべてPROTO.に預けてください。用意していただくのは最低限の情報と写真素材だけ。テレビ局仕込みの「プロの視点」でストーリーを紡ぎ出します。
-          </motion.p>
-
-          {/* 3つのコア・バリューの追加 */}
-          <div className="grid md:grid-cols-3 gap-8 mb-24">
-            {[
-              { 
-                title: "【完全丸投げOK】文章作成の全自動化", 
-                desc: "基本情報さえあれば、キャッチコピーから紹介文まで全て作成。理系的な情報の整理術を駆使し、ターゲットの心に刺さる論理的な文章を構築。忙しいあなたの手を止めることはありません。" 
-              },
-              { 
-                title: "【逆取材スタイル】気づかなかった強みの発見", 
-                desc: "積極的に質問・取材をさせていただきます。テレビ局で5年間、多様な現場を取材してきた経験を活かし、オーナー様自身も気づいていない「本当の価値」を深掘りします。" 
-              },
-              { 
-                title: "【報道品質の視点】信頼を勝ち取る見せ方", 
-                desc: "単に綺麗な言葉を並べるのではありません。報道現場で培った「何が事実で、どこが魅力か」を見極める視点。取材で得たエピソードを反映し、一見さんを常連に変える納得感を生み出します。" 
-              }
-            ].map((value, i) => (
-              <motion.div key={i} variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 border border-white/5 bg-[#080808] hover:bg-[#0A0A0A] transition-all">
-                <h3 className="text-[#007AFF] text-sm font-black mb-4 tracking-tighter uppercase">{`Value 0${i + 1}`}</h3>
-                <h4 className="text-lg font-bold mb-4 tracking-tight leading-snug">{value.title}</h4>
-                <p className="text-[#999999] text-sm leading-loose">{value.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            {[
-              { title: "戦略的SEO・論理的設計", desc: "単なるデザインではなく、検索エンジンに評価される構造をNext.jsで構築。Googleの最新指標を網羅し、持続的に集客できる土台を作ります。" },
-              { title: "スピード納品と表示速度", desc: "実績あるテンプレートを活用し、高品質を「安く、早く」提供。超高速な表示速度でユーザー離脱を防ぎ、成約率（コンバージョン）を最大化します。" }
-            ].map((card, i) => (
-              <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.2 }} className="p-12 border border-white/10 bg-[#0A0A0A] hover:border-[#007AFF]/50 transition-all">
-                <h3 className="text-2xl font-bold mb-6 border-b border-[#007AFF] pb-4 tracking-tight">{card.title}</h3>
-                <p className="text-[#BBBBBB] text-base leading-loose font-medium">{card.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+    </section>
   );
 }
