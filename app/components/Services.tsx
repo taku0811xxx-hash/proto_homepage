@@ -127,7 +127,7 @@ export default function Services() {
           <div className="grid md:grid-cols-2 gap-20 items-center mb-10">
             <motion.div variants={fadeInUp} className="order-2 md:order-1 relative aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-2xl group border border-slate-200">
               <Image 
-                src="/images/web/web-hero.JPG"
+                src="/images/web/web-hero.jpg"
                 alt="Web Development"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

@@ -34,7 +34,7 @@ export default function Hero() {
       >
         {/* 背景画像：public/images/hero/visual-bg.JPG を想定 */}
         <Image 
-          src="/images/hero/visual-bg.JPG" 
+          src="/images/hero/visual-bg.jpg" 
           alt="写真・動画撮影 背景"
           fill
           className="object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -78,7 +78,7 @@ export default function Hero() {
       >
         {/* 背景画像：public/images/hero/web-bg.JPG を想定 */}
         <Image 
-          src="/images/hero/web-bg.JPG" 
+          src="/images/hero/web-bg.jpg" 
           alt="ホームページ制作 背景"
           fill
           className="object-cover transition-transform duration-1000 group-hover:scale-110"
