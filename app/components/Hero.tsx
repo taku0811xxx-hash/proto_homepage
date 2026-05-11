@@ -52,12 +52,11 @@ export default function Hero() {
             </div>
             
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-[#1A202C] mb-6">
-              写真・動画<br />
-              <span className="text-[#007AFF]">撮影</span>
+              写真・動画撮影<br />
             </h2>
             
             <p className="max-w-xs md:max-w-sm text-sm md:text-base text-[#4A5568] leading-relaxed mb-10 font-medium">
-              テレビ局の報道現場で磨いた確かな技術。家族の記念日からビジネスPRまで、価値ある一瞬を記録します。
+              テレビ局の報道現場で磨いた確かな技術。家族の記念日からビジネスPRまで、価値ある一瞬を記録します
             </p>
             
             <Link 
@@ -97,8 +96,7 @@ export default function Hero() {
             </div>
 
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-[#1A202C] mb-6">
-              HP・サイト<br />
-              <span className="text-[#007AFF]">制作</span>
+              HP・サイト制作
             </h2>
             
             <p className="max-w-xs md:max-w-sm text-sm md:text-base text-[#4A5568] leading-relaxed mb-10 font-medium">

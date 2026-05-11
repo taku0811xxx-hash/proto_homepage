@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Noto_Sans_JP, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// 英字タイトル用：洗練された力強さを出す
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  display: 'swap', 
+  display: 'swap',
+  weight: ['900'], // タイトル用に極太を指定
+});
+
+// 日本語本文用：誠実で読みやすい標準的なゴシック
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans",
+  subsets: ["latin"],
+  display: 'swap',
+  weight: ['400', '700', '900'],
 });
 
 const geistMono = Geist_Mono({
@@ -50,12 +60,10 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      // クラス名に新しいフォント変数を適用
+      className={`${inter.variable} ${notoSansJP.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      {/* 背景色を白系 (#F8FAFC)、テキストを深いグレー (#1A202C) に変更。
-          これにより、清潔感と親しみやすさを両立させます。
-      */}
-      <body className="min-h-full flex flex-col bg-[#F8FAFC] text-[#1A202C]">
+      <body className="min-h-full flex flex-col bg-[#F8FAFC] text-[#1A202C] font-sans">
         {children}
       </body>
     </html>

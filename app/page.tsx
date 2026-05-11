@@ -52,15 +52,15 @@ export default function ProtoOfficialPage() {
         transition={{ duration: 0.6, ease: "circOut", delay: 0.2 }}
         className="fixed top-0 w-full z-[100] flex justify-between items-center px-6 md:px-12 py-6 bg-white/80 backdrop-blur-md border-b border-slate-200"
       >
-        <div className="text-2xl font-black tracking-tighter italic text-[#1A202C]">PROTO.</div>
+        <div className="text-2xl font-black tracking-tighter italic text-[#1A202C]">PROTO</div>
         <div className="hidden lg:flex gap-8 text-[11px] font-bold tracking-[0.1em] uppercase text-[#4A5568] items-center">
-          <a href="#visual" className="hover:text-[#007AFF] transition-colors">Visual</a>
-          <a href="#web" className="hover:text-[#007AFF] transition-colors">Web</a>
-          <a href="#models" className="hover:text-[#007AFF] transition-colors">Templates</a>
-          <Link href="/blog" className="hover:text-[#007AFF] transition-colors">Blog</Link>
-          <a href="#profile" className="hover:text-[#007AFF] transition-colors">Profile</a>
-          <a href="#pricing" className="hover:text-[#007AFF] transition-colors">Pricing</a>
-          <a href="#contact" className="bg-[#007AFF] text-white px-8 py-3 rounded-full hover:bg-[#1A202C] transition-all duration-300 shadow-lg shadow-[#007AFF]/20">Contact</a>
+          <a href="#visual" className="hover:text-[#007AFF] transition-colors">撮影</a>
+          <a href="#web" className="hover:text-[#007AFF] transition-colors">Web制作</a>
+          <a href="#models" className="hover:text-[#007AFF] transition-colors">webテンプレート</a>
+          <Link href="/blog" className="hover:text-[#007AFF] transition-colors">ブログ</Link>
+          <a href="#profile" className="hover:text-[#007AFF] transition-colors">プロフィール</a>
+          <a href="#pricing" className="hover:text-[#007AFF] transition-colors">料金表</a>
+          <a href="#contact" className="bg-[#007AFF] text-white px-8 py-3 rounded-full hover:bg-[#1A202C] transition-all duration-300 shadow-lg shadow-[#007AFF]/20">お問い合わせ</a>
         </div>
       </motion.nav>
 
