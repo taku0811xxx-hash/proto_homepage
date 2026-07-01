@@ -100,11 +100,21 @@ export default function Services() {
                 exit="exit"
                 className="absolute inset-0"
               >
+                {/* 背景:同じ写真を拡大・ぼかして敷き、縦横比が違う写真でも余白が目立たないようにする */}
+                <Image
+                  src={visualImages[currentImageIndex]}
+                  alt=""
+                  fill
+                  aria-hidden
+                  className="object-cover scale-110 blur-2xl opacity-40"
+                  sizes="50vw"
+                />
+                {/* 前面:写真全体をそのまま表示（切り抜きなし） */}
                 <Image
                   src={visualImages[currentImageIndex]}
                   alt={`Visual Sample`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   priority={currentImageIndex === 0}
                   sizes="50vw"
                 />
