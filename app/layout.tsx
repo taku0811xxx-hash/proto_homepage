@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_JP, Geist_Mono } from "next/font/google";
+import { Inter, Bebas_Neue, Noto_Sans_JP, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// 英字タイトル用：洗練された力強さを出す
+// 英字見出し用：映画のクレジット・ポスターを思わせるコンデンス体
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas",
+  subsets: ["latin"],
+  display: 'swap',
+  weight: ['400'],
+});
+
+// 英字タイトル用：洗練された力強さを出す（現状は保険として残す）
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: 'swap',
-  weight: ['900'], // タイトル用に極太を指定
+  weight: ['900'],
 });
 
 // 日本語本文用：誠実で読みやすい標準的なゴシック
@@ -61,7 +69,7 @@ export default function RootLayout({
     <html
       lang="ja"
       // クラス名に新しいフォント変数を適用
-      className={`${inter.variable} ${notoSansJP.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${inter.variable} ${bebasNeue.variable} ${notoSansJP.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#F8FAFC] text-[#1A202C] font-sans">
         {children}

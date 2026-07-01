@@ -41,14 +41,15 @@ export default function Hero() {
           sizes="50vw"
           priority
         />
-        {/* 白ベースのオーバーレイ：画像を見せつつ文字を読みやすく */}
-        <div className="absolute inset-0 bg-white/80 md:bg-white/85 backdrop-blur-[2px] transition-colors duration-700 group-hover:bg-white/70"></div>
+        {/* 白ベースのオーバーレイ：うっすら明るくするだけで写真を主役にする */}
+        <div className="absolute inset-0 bg-white/20 md:bg-white/15 transition-colors duration-700 group-hover:bg-white/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent"></div>
         
         <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-12 lg:pl-24 lg:pr-32">
-          <motion.div variants={fadeInUp}>
+          <motion.div variants={fadeInUp} className="bg-white/60 backdrop-blur-md rounded-3xl p-6 md:p-8 md:bg-white/50 inline-block">
             <div className="flex items-center gap-2 mb-4">
-              <span className="w-8 h-[2px] bg-[#007AFF]"></span>
-              <span className="text-[#007AFF] font-bold text-sm tracking-widest uppercase">Service 01</span>
+              <span className="w-8 h-[2px] bg-[#C1692B]"></span>
+              <span className="text-[#C1692B] font-bold text-sm tracking-widest uppercase">Service 01</span>
             </div>
             
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-[#1A202C] mb-6">
@@ -61,7 +62,7 @@ export default function Hero() {
             
             <Link 
               href="#visual" 
-              className="inline-flex items-center justify-center bg-[#1A202C] text-white px-8 py-4 text-xs font-black hover:bg-[#007AFF] transition-all duration-300 rounded-sm shadow-xl shadow-slate-200"
+              className="inline-flex items-center justify-center bg-[#1A202C] text-white px-8 py-4 text-xs font-black hover:bg-[#C1692B] transition-all duration-300 rounded-sm shadow-xl shadow-slate-200"
             >
               撮影メニューを見る
             </Link>
@@ -85,14 +86,14 @@ export default function Hero() {
           sizes="50vw"
           priority
         />
-        {/* 右側は少し青みがかった白で変化をつける */}
-        <div className="absolute inset-0 bg-[#F8FAFC]/80 md:bg-[#F8FAFC]/85 backdrop-blur-[2px] transition-colors duration-700 group-hover:bg-[#F8FAFC]/70"></div>
+        {/* 右側は少し明るくするだけに留める */}
+        <div className="absolute inset-0 bg-[#F8FAFC]/20 transition-colors duration-700 group-hover:bg-[#F8FAFC]/10"></div>
         
         <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-12 lg:pr-24 lg:pl-32">
-          <motion.div variants={fadeInUp}>
+          <motion.div variants={fadeInUp} className="bg-white/60 backdrop-blur-md rounded-3xl p-6 md:p-8 md:bg-white/50 inline-block">
             <div className="flex items-center gap-2 mb-4">
-              <span className="w-8 h-[2px] bg-[#007AFF]"></span>
-              <span className="text-[#007AFF] font-bold text-sm tracking-widest uppercase">Service 02</span>
+              <span className="w-8 h-[2px] bg-[#C1692B]"></span>
+              <span className="text-[#C1692B] font-bold text-sm tracking-widest uppercase">Service 02</span>
             </div>
 
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-[#1A202C] mb-6">
@@ -105,7 +106,7 @@ export default function Hero() {
             
             <Link 
               href="#edit" 
-              className="inline-flex items-center justify-center bg-[#007AFF] text-white px-8 py-4 text-xs font-black hover:bg-[#1A202C] transition-all duration-300 rounded-sm shadow-xl shadow-[#007AFF]/10"
+              className="inline-flex items-center justify-center bg-[#C1692B] text-white px-8 py-4 text-xs font-black hover:bg-[#1A202C] transition-all duration-300 rounded-sm shadow-xl shadow-[#C1692B]/10"
             >
               編集メニューを見る
             </Link>
@@ -115,12 +116,12 @@ export default function Hero() {
 
       {/* 中央のキャッチコピー */}
       <div className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex-col items-center">
-        <div className="bg-white/90 backdrop-blur-md border border-[#007AFF]/30 px-5 py-2.5 shadow-sm rounded-sm">
+        <div className="bg-white/90 backdrop-blur-md border border-[#C1692B]/30 px-5 py-2.5 shadow-sm rounded-sm">
           <p className="text-[#1A202C] text-[10px] font-bold tracking-[0.4em] whitespace-nowrap uppercase">
             表現と技術を、ひとつに。
           </p>
         </div>
-        <div className="w-[1px] h-16 bg-gradient-to-b from-[#007AFF] to-transparent mt-4 animate-pulse"></div>
+        <div className="w-[1px] h-16 bg-gradient-to-b from-[#C1692B] to-transparent mt-4 animate-pulse"></div>
       </div>
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-[50vw] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />

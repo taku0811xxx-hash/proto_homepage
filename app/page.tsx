@@ -23,7 +23,7 @@ export default function ProtoOfficialPage() {
   }, []);
 
   return (
-    <main className="bg-[#F8FAFC] text-[#1A202C] font-sans selection:bg-[#007AFF] selection:text-white leading-relaxed overflow-x-hidden">
+    <main className="bg-[#F8FAFC] text-[#1A202C] font-sans selection:bg-[#C1692B] selection:text-white leading-relaxed overflow-x-hidden">
 
       {/* 1. オープニング演出 */}
       <AnimatePresence>
@@ -38,9 +38,9 @@ export default function ProtoOfficialPage() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.2 } }}
-              className="text-4xl md:text-6xl font-black italic tracking-tighter text-[#1A202C]"
+              className="font-display text-5xl md:text-7xl tracking-wide text-[#1A202C]"
             >
-              PROTO<span className="text-[#007AFF]">.</span>
+              PROTO<span className="text-[#C1692B]">.</span>
             </motion.div>
           </motion.div>
         )}
@@ -53,15 +53,15 @@ export default function ProtoOfficialPage() {
         transition={{ duration: 0.6, ease: "circOut", delay: 0.2 }}
         className="fixed top-0 w-full z-[100] flex justify-between items-center px-6 md:px-12 py-6 bg-white/80 backdrop-blur-md border-b border-slate-200"
       >
-        <div className="text-2xl font-black tracking-tighter italic text-[#1A202C]">PROTO</div>
+        <div className="font-display text-3xl tracking-wide text-[#1A202C]">PROTO</div>
         <div className="hidden lg:flex gap-8 text-[11px] font-bold tracking-[0.1em] uppercase text-[#4A5568] items-center">
-          <a href="#visual" className="hover:text-[#007AFF] transition-colors">撮影</a>
-          <a href="#edit" className="hover:text-[#007AFF] transition-colors">動画編集</a>
-          <a href="#works" className="hover:text-[#007AFF] transition-colors">作品集</a>
-          <Link href="/blog" className="hover:text-[#007AFF] transition-colors">ブログ</Link>
-          <a href="#profile" className="hover:text-[#007AFF] transition-colors">プロフィール</a>
-          <a href="#pricing" className="hover:text-[#007AFF] transition-colors">料金表</a>
-          <a href="#contact" className="bg-[#007AFF] text-white px-8 py-3 rounded-full hover:bg-[#1A202C] transition-all duration-300 shadow-lg shadow-[#007AFF]/20">お問い合わせ</a>
+          <a href="#visual" className="hover:text-[#C1692B] transition-colors">撮影</a>
+          <a href="#edit" className="hover:text-[#C1692B] transition-colors">動画編集</a>
+          <a href="#works" className="hover:text-[#C1692B] transition-colors">作品集</a>
+          <Link href="/blog" className="hover:text-[#C1692B] transition-colors">ブログ</Link>
+          <a href="#profile" className="hover:text-[#C1692B] transition-colors">プロフィール</a>
+          <a href="#pricing" className="hover:text-[#C1692B] transition-colors">料金表</a>
+          <a href="#contact" className="bg-[#C1692B] text-white px-8 py-3 rounded-full hover:bg-[#1A202C] transition-all duration-300 shadow-lg shadow-[#C1692B]/20">お問い合わせ</a>
         </div>
       </motion.nav>
 
@@ -77,26 +77,26 @@ export default function ProtoOfficialPage() {
               
               {/* Profile Image Area */}
               <div className="w-full md:w-80 aspect-[4/5] bg-slate-50 rounded-[40px] border border-slate-200 flex items-center justify-center relative overflow-hidden group shadow-sm">
-                <span className="text-slate-200 font-black text-[12rem] absolute -bottom-10 -right-5 italic select-none group-hover:text-[#007AFF]/10 transition-colors duration-700">P</span>
+                <span className="text-slate-200 font-black text-[12rem] absolute -bottom-10 -right-5 italic select-none group-hover:text-[#C1692B]/10 transition-colors duration-700">P</span>
                 <div className="relative z-10 text-center">
-                   <div className="w-12 h-1 bg-[#007AFF] mx-auto mb-6 rounded-full" />
+                   <div className="w-12 h-1 bg-[#C1692B] mx-auto mb-6 rounded-full" />
                    <p className="font-bold tracking-widest text-xs text-[#4A5568] uppercase">Photographer / Editor</p>
                 </div>
               </div>
 
               <div className="w-full md:flex-1">
-                <div className="inline-block px-4 py-1 rounded-full bg-[#007AFF]/5 border border-[#007AFF]/10 text-[#007AFF] text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
+                <div className="inline-block px-4 py-1 rounded-full bg-[#C1692B]/5 border border-[#C1692B]/10 text-[#C1692B] text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
                   Founder Profile
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 leading-tight text-[#1A202C]">
                   あなたの「一瞬」を、<br />
-                  <span className="relative inline-block text-[#007AFF]">
+                  <span className="relative inline-block text-[#C1692B]">
                     一番近くで形にする。
                     <motion.span 
                       initial={{ width: 0 }}
                       whileInView={{ width: '100%' }}
                       transition={{ duration: 0.8, delay: 0.5 }}
-                      className="absolute bottom-1 left-0 h-3 bg-[#007AFF]/10 -z-10"
+                      className="absolute bottom-1 left-0 h-3 bg-[#C1692B]/10 -z-10"
                     />
                   </span>
                 </h2>
@@ -116,10 +116,10 @@ export default function ProtoOfficialPage() {
             <div className="max-w-7xl mx-auto">
               <div className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
                 <div>
-                  <div className="inline-block px-4 py-1 rounded-full bg-[#007AFF]/5 border border-[#007AFF]/10 text-[#007AFF] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">Latest Insight</div>
-                  <h2 className="text-5xl md:text-7xl font-black tracking-tighter italic uppercase text-[#1A202C]">Blog.</h2>
+                  <div className="inline-block px-4 py-1 rounded-full bg-[#C1692B]/5 border border-[#C1692B]/10 text-[#C1692B] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">Latest Insight</div>
+                  <h2 className="font-display text-6xl md:text-8xl tracking-wide uppercase text-[#1A202C]">Blog.</h2>
                 </div>
-                <Link href="/blog" className="text-[#A0AEC0] hover:text-[#007AFF] text-[10px] font-bold uppercase tracking-widest pb-2 border-b border-slate-200 hover:border-[#007AFF] transition-all">
+                <Link href="/blog" className="text-[#A0AEC0] hover:text-[#C1692B] text-[10px] font-bold uppercase tracking-widest pb-2 border-b border-slate-200 hover:border-[#C1692B] transition-all">
                   View All Articles →
                 </Link>
               </div>
@@ -138,10 +138,10 @@ export default function ProtoOfficialPage() {
                       className="group cursor-pointer bg-white border border-slate-100 p-10 rounded-[32px] h-full transition-all shadow-sm hover:shadow-xl hover:shadow-slate-200/50"
                     >
                       <div className="text-[10px] font-bold text-[#A0AEC0] mb-6 tracking-widest uppercase">
-                        {post.date} / <span className="text-[#007AFF]">{post.cat}</span>
+                        {post.date} / <span className="text-[#C1692B]">{post.cat}</span>
                       </div>
-                      <h3 className="text-xl font-bold leading-snug group-hover:text-[#007AFF] transition-colors mb-10 text-[#1A202C]">{post.title}</h3>
-                      <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#CBD5E0] group-hover:text-[#007AFF] transition-colors">
+                      <h3 className="text-xl font-bold leading-snug group-hover:text-[#C1692B] transition-colors mb-10 text-[#1A202C]">{post.title}</h3>
+                      <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#CBD5E0] group-hover:text-[#C1692B] transition-colors">
                         Read Story <span className="text-lg leading-none">+</span>
                       </div>
                     </motion.article>
@@ -154,7 +154,7 @@ export default function ProtoOfficialPage() {
           {/* 9. FAQ Section */}
           <section id="faq" className="py-32 px-8 md:px-24 bg-white border-y border-slate-100 mx-4 md:mx-12 rounded-[60px] shadow-sm">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-5xl md:text-6xl font-black tracking-tighter italic uppercase mb-20 text-center text-[#1A202C]">FAQ.</h2>
+              <h2 className="font-display text-6xl md:text-7xl tracking-wide uppercase mb-20 text-center text-[#1A202C]">FAQ.</h2>
               <div className="space-y-6">
                 {[
                   { q: '撮影なしで動画編集だけお願いできますか?', a: 'もちろん可能です。撮影済みの素材データをお送りいただくだけで、テロップ・BGM・カット編集まで対応します。' },
@@ -163,8 +163,8 @@ export default function ProtoOfficialPage() {
                   { q: '納品後の修正はどの程度可能ですか?', a: '動画編集の修正は2回まで無料で対応します。3回目以降は1回¥3,000で承ります。' },
                 ].map((item, i) => (
                   <div key={i} className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-md transition-all duration-300">
-                    <h3 className="text-lg md:text-xl font-bold mb-4 flex gap-4 text-[#1A202C]"><span className="text-[#007AFF]">Q.</span>{item.q}</h3>
-                    <p className="text-[#4A5568] text-sm md:text-base leading-relaxed pl-8 border-l-2 border-[#007AFF]/30">{item.a}</p>
+                    <h3 className="text-lg md:text-xl font-bold mb-4 flex gap-4 text-[#1A202C]"><span className="text-[#C1692B]">Q.</span>{item.q}</h3>
+                    <p className="text-[#4A5568] text-sm md:text-base leading-relaxed pl-8 border-l-2 border-[#C1692B]/30">{item.a}</p>
                   </div>
                 ))}
               </div>
@@ -186,7 +186,7 @@ export default function ProtoOfficialPage() {
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #F8FAFC; }
         ::-webkit-scrollbar-thumb { background: #CBD5E0; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #007AFF; }
+        ::-webkit-scrollbar-thumb:hover { background: #C1692B; }
       `}</style>
     </main>
   );

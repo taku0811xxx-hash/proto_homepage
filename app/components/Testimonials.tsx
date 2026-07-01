@@ -14,11 +14,11 @@ export default function Testimonials() {
     <section id="voice" className="py-32 px-8 md:px-24 bg-white border-y border-slate-100">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1 rounded-full bg-[#007AFF]/5 border border-[#007AFF]/10 text-[#007AFF] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+          <div className="inline-block px-4 py-1 rounded-full bg-[#C1692B]/5 border border-[#C1692B]/10 text-[#C1692B] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
             Client Voice
           </div>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tighter italic uppercase text-[#1A202C]">
-            お客様の声<span className="text-[#007AFF]">.</span>
+          <h2 className="text-5xl md:text-6xl font-black tracking-tighter uppercase text-[#1A202C]">
+            お客様の声<span className="font-display text-[#C1692B]">.</span>
           </h2>
           <p className="text-[#4A5568] text-sm mt-6 font-medium">
             ココナラでのご依頼実績65件以上。いただいた評価の一部をご紹介します。

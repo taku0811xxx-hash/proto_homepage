@@ -8,11 +8,11 @@ export default function Contact() {
     <section id="contact" className="py-40 px-8 md:px-24 bg-[#F8FAFC] text-[#1A202C]">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
         <div>
-          <div className="inline-block px-4 py-1 rounded-full bg-[#007AFF]/5 border border-[#007AFF]/10 text-[#007AFF] text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
+          <div className="inline-block px-4 py-1 rounded-full bg-[#C1692B]/5 border border-[#C1692B]/10 text-[#C1692B] text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
             Get in Touch
           </div>
-          <h2 className="text-7xl md:text-8xl font-black italic uppercase mb-8 leading-none tracking-tighter text-[#1A202C]">
-            Contact<span className="text-[#007AFF]">.</span>
+          <h2 className="font-display text-8xl md:text-9xl uppercase mb-8 leading-none tracking-wide text-[#1A202C]">
+            Contact<span className="text-[#C1692B]">.</span>
           </h2>
           <p className="text-[#4A5568] mb-10 font-medium leading-relaxed max-w-sm">
             制作のご依頼、お見積りのご相談など、お気軽にお問い合わせください。通常24時間以内に返信させていただきます。
@@ -36,7 +36,7 @@ export default function Contact() {
                 name="name" 
                 required 
                 placeholder="お名前" 
-                className="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-[#007AFF] transition-all placeholder:text-slate-300 font-medium" 
+                className="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-[#C1692B] transition-all placeholder:text-slate-300 font-medium" 
               />
             </div>
             <div className="relative group">
@@ -45,7 +45,7 @@ export default function Contact() {
                 name="email" 
                 required 
                 placeholder="メールアドレス" 
-                className="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-[#007AFF] transition-all placeholder:text-slate-300 font-medium" 
+                className="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-[#C1692B] transition-all placeholder:text-slate-300 font-medium" 
               />
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function Contact() {
             <select 
               name="service" 
               defaultValue="" 
-              className="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-[#007AFF] text-[#1A202C] appearance-none cursor-pointer font-medium"
+              className="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-[#C1692B] text-[#1A202C] appearance-none cursor-pointer font-medium"
             >
               <option value="" disabled>お問い合わせ内容を選択</option>
               <option value="Photo Video Shooting">写真・動画撮影</option>
@@ -74,14 +74,14 @@ export default function Contact() {
             required 
             placeholder="ご相談内容" 
             rows={4} 
-            className="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-[#007AFF] resize-none transition-all placeholder:text-slate-300 font-medium"
+            className="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-[#C1692B] resize-none transition-all placeholder:text-slate-300 font-medium"
           ></textarea>
 
           <motion.button 
             whileHover={{ scale: 1.01, backgroundColor: '#1A202C' }} 
             whileTap={{ scale: 0.99 }} 
             type="submit" 
-            className="w-full bg-[#007AFF] text-white py-6 text-xs font-black uppercase tracking-[0.3em] shadow-xl shadow-blue-500/20 transition-all rounded-sm"
+            className="w-full bg-[#C1692B] text-white py-6 text-xs font-black uppercase tracking-[0.3em] shadow-xl shadow-blue-500/20 transition-all rounded-sm"
           >
             Submit Request
           </motion.button>

@@ -55,8 +55,8 @@ export default function Services() {
         >
           <motion.div variants={fadeInUp}>
             <div className="inline-flex items-center gap-4 mb-8">
-              <span className="bg-[#007AFF] text-white font-black text-sm px-4 py-1 rounded-sm tracking-tighter uppercase">Service 01</span>
-              <span className="text-[#1A202C] font-black text-2xl md:text-3xl tracking-tighter border-b-4 border-[#007AFF] pb-1">
+              <span className="bg-[#C1692B] text-white font-black text-sm px-4 py-1 rounded-sm tracking-tighter uppercase">Service 01</span>
+              <span className="text-[#1A202C] font-black text-2xl md:text-3xl tracking-tighter border-b-4 border-[#C1692B] pb-1">
                 写真・動画撮影
               </span>
             </div>
@@ -74,7 +74,7 @@ export default function Services() {
                 { title: "家族・ライフイベント", tags: "七五三 / 記念撮影 / 出張撮影" },
                 { title: "企業・ブランド撮影", tags: "PR動画 / ポートレート / 商品撮影" },
               ].map((item, i) => (
-                <div key={i} className="border-l-4 border-slate-100 pl-6 group hover:border-[#007AFF] transition-all duration-300">
+                <div key={i} className="border-l-4 border-slate-100 pl-6 group hover:border-[#C1692B] transition-all duration-300">
                   <h3 className="text-lg font-bold mb-1">{item.title}</h3>
                   <span className="text-[10px] font-bold text-[#A0AEC0] uppercase tracking-[0.2em]">{item.tags}</span>
                 </div>
@@ -84,7 +84,7 @@ export default function Services() {
             {/* リンク先を #pricing に修正 */}
             <Link 
               href="#pricing" 
-              className="inline-flex items-center justify-center bg-[#1A202C] text-white px-10 py-5 text-[11px] font-black uppercase tracking-widest hover:bg-[#007AFF] transition-all duration-500 rounded-sm shadow-xl shadow-slate-200"
+              className="inline-flex items-center justify-center bg-[#1A202C] text-white px-10 py-5 text-[11px] font-black uppercase tracking-widest hover:bg-[#C1692B] transition-all duration-500 rounded-sm shadow-xl shadow-slate-200"
             >
               撮影メニューと料金を見る →
             </Link>
@@ -132,8 +132,8 @@ export default function Services() {
 
             <motion.div variants={fadeInUp} className="order-1 md:order-2">
               <div className="inline-flex items-center gap-4 mb-8">
-                <span className="bg-[#007AFF] text-white font-black text-sm px-4 py-1 rounded-sm tracking-tighter uppercase">Service 02</span>
-                <span className="text-[#1A202C] font-black text-2xl md:text-3xl tracking-tighter border-b-4 border-[#007AFF] pb-1">
+                <span className="bg-[#C1692B] text-white font-black text-sm px-4 py-1 rounded-sm tracking-tighter uppercase">Service 02</span>
+                <span className="text-[#1A202C] font-black text-2xl md:text-3xl tracking-tighter border-b-4 border-[#C1692B] pb-1">
                   動画編集
                 </span>
               </div>
@@ -148,7 +148,7 @@ export default function Services() {
               
               <Link 
                 href="#pricing" 
-                className="inline-flex items-center justify-center bg-[#007AFF] text-white px-10 py-5 text-[11px] font-black uppercase tracking-widest hover:bg-[#1A202C] transition-all duration-500 rounded-sm shadow-xl shadow-[#007AFF]/20"
+                className="inline-flex items-center justify-center bg-[#C1692B] text-white px-10 py-5 text-[11px] font-black uppercase tracking-widest hover:bg-[#1A202C] transition-all duration-500 rounded-sm shadow-xl shadow-[#C1692B]/20"
               >
                 編集プランと料金を見る →
               </Link>
@@ -177,12 +177,12 @@ export default function Services() {
               <motion.div 
                 key={i} 
                 variants={fadeInUp}
-                className="bg-white p-10 border border-slate-200 hover:border-[#007AFF]/50 transition-all duration-500 group relative overflow-hidden shadow-sm hover:shadow-md"
+                className="bg-white p-10 border border-slate-200 hover:border-[#C1692B]/50 transition-all duration-500 group relative overflow-hidden shadow-sm hover:shadow-md"
               >
                 <div className="relative z-10">
-                  <span className="text-[#007AFF] font-bold text-[10px] tracking-widest uppercase mb-4 block">{card.highlight}</span>
+                  <span className="text-[#C1692B] font-bold text-[10px] tracking-widest uppercase mb-4 block">{card.highlight}</span>
                   <h3 className="text-2xl font-black mb-6 text-[#1A202C] leading-tight">{card.title}</h3>
-                  <div className="w-8 h-[2px] bg-[#007AFF] mb-6 group-hover:w-full transition-all duration-700"></div>
+                  <div className="w-8 h-[2px] bg-[#C1692B] mb-6 group-hover:w-full transition-all duration-700"></div>
                   <p className="text-[#4A5568] text-[15px] leading-loose font-medium">{card.desc}</p>
                 </div>
               </motion.div>
@@ -213,7 +213,7 @@ export default function Services() {
           <div className="bg-white/10 p-8 md:p-12 backdrop-blur-xl border border-white/20 text-left rounded-sm shadow-2xl mt-12">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6 border-b border-white/20 pb-8 text-white">
               <h3 className="text-2xl md:text-3xl font-bold italic uppercase tracking-tighter text-[#1A202C]">撮影 + 編集 ワンストップ</h3>
-              <div className="text-xs font-bold tracking-widest bg-white text-[#007AFF] px-4 py-2 uppercase rounded-sm">企業様に人気</div>
+              <div className="text-xs font-bold tracking-widest bg-white text-[#C1692B] px-4 py-2 uppercase rounded-sm">企業様に人気</div>
             </div>
             <div className="grid md:grid-cols-2 gap-10">
               <p className="text-black/90 text-sm leading-loose font-medium">
@@ -238,7 +238,7 @@ export default function Services() {
             <div className="mt-12 text-center">
               <Link 
                 href="#pricing" 
-                className="inline-block bg-white text-[#007AFF] px-12 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-[#1A202C] hover:text-white transition-all duration-300 rounded-sm shadow-xl"
+                className="inline-block bg-white text-[#C1692B] px-12 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-[#1A202C] hover:text-white transition-all duration-300 rounded-sm shadow-xl"
               >
                 ワンストッププランを確認する
               </Link>

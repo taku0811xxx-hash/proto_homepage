@@ -26,11 +26,11 @@ export default function Portfolio() {
     <section id="works" className="py-32 px-8 md:px-24 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1 rounded-full bg-[#007AFF]/5 border border-[#007AFF]/10 text-[#007AFF] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+          <div className="inline-block px-4 py-1 rounded-full bg-[#C1692B]/5 border border-[#C1692B]/10 text-[#C1692B] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
             Portfolio
           </div>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tighter italic uppercase text-[#1A202C]">
-            Works<span className="text-[#007AFF]">.</span>
+          <h2 className="font-display text-6xl md:text-7xl tracking-wide uppercase text-[#1A202C]">
+            Works<span className="text-[#C1692B]">.</span>
           </h2>
         </div>
 
@@ -45,8 +45,8 @@ export default function Portfolio() {
               onClick={() => setTab(item.key)}
               className={`px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 ${
                 tab === item.key
-                  ? 'bg-[#007AFF] text-white shadow-lg shadow-[#007AFF]/20'
-                  : 'bg-white text-[#4A5568] border border-slate-200 hover:border-[#007AFF]/40'
+                  ? 'bg-[#C1692B] text-white shadow-lg shadow-[#C1692B]/20'
+                  : 'bg-white text-[#4A5568] border border-slate-200 hover:border-[#C1692B]/40'
               }`}
             >
               {item.label}

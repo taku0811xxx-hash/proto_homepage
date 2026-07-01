@@ -18,11 +18,11 @@ export default function Pricing() {
     <section id="pricing" className="py-40 px-8 md:px-24 bg-white border-y border-slate-100 text-[#1A202C]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-24 text-center">
-          <div className="inline-block px-4 py-1 rounded-full bg-[#007AFF]/5 border border-[#007AFF]/10 text-[#007AFF] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+          <div className="inline-block px-4 py-1 rounded-full bg-[#C1692B]/5 border border-[#C1692B]/10 text-[#C1692B] text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
             Service Price
           </div>
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter italic uppercase text-[#1A202C]">
-            Pricing<span className="text-[#007AFF]">.</span>
+          <h2 className="font-display text-7xl md:text-9xl tracking-wide uppercase text-[#1A202C]">
+            Pricing<span className="text-[#C1692B]">.</span>
           </h2>
         </div>
 
@@ -75,11 +75,11 @@ export default function Pricing() {
           </motion.div>
 
           {/* ワンストッププラン */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }} variants={fadeInUp} className="p-10 bg-[#F8FAFC] border-2 border-[#007AFF] relative scale-105 z-10 flex flex-col shadow-2xl shadow-blue-500/10">
-            <div className="absolute top-0 right-0 bg-[#007AFF] text-white text-[10px] font-black px-5 py-1.5 uppercase tracking-widest">Recommended</div>
-            <h3 className="text-xl font-bold mb-10 italic uppercase border-b border-[#007AFF]/20 pb-4 text-[#1A202C]">ワンストップ</h3>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }} variants={fadeInUp} className="p-10 bg-[#F8FAFC] border-2 border-[#C1692B] relative scale-105 z-10 flex flex-col shadow-2xl shadow-blue-500/10">
+            <div className="absolute top-0 right-0 bg-[#C1692B] text-white text-[10px] font-black px-5 py-1.5 uppercase tracking-widest">Recommended</div>
+            <h3 className="text-xl font-bold mb-10 italic uppercase border-b border-[#C1692B]/20 pb-4 text-[#1A202C]">ワンストップ</h3>
             <div className="flex-grow">
-              <p className="text-xs font-bold text-[#007AFF] italic tracking-widest mb-6 uppercase text-center border border-[#007AFF]/30 py-2">撮影 ＋ 編集</p>
+              <p className="text-xs font-bold text-[#C1692B] italic tracking-widest mb-6 uppercase text-center border border-[#C1692B]/30 py-2">撮影 ＋ 編集</p>
               <p className="text-[#4A5568] text-xs leading-loose font-medium mb-8">
                 企業のPR動画・商品紹介・イベント記録など、企画から撮影・編集まで丸投げでご依頼いただけます。
               </p>
@@ -88,7 +88,7 @@ export default function Pricing() {
                 <p className="text-[10px] text-[#A0AEC0] mt-2 font-bold uppercase tracking-[0.2em]">内容によりお見積り</p>
               </div>
             </div>
-            <Link href="#contact" className="w-full bg-[#1A202C] text-white text-center py-5 text-[11px] font-black uppercase tracking-widest hover:bg-[#007AFF] transition-all shadow-lg rounded-sm">お問い合わせ</Link>
+            <Link href="#contact" className="w-full bg-[#1A202C] text-white text-center py-5 text-[11px] font-black uppercase tracking-widest hover:bg-[#C1692B] transition-all shadow-lg rounded-sm">お問い合わせ</Link>
           </motion.div>
         </div>
 
