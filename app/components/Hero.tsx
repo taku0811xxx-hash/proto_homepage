@@ -76,10 +76,10 @@ export default function Hero() {
         variants={containerVariants}
         className="relative flex-1 h-1/2 md:h-full group overflow-hidden bg-[#F8FAFC]"
       >
-        {/* 背景画像：public/images/hero/web-bg.JPG を想定 */}
+        {/* 背景画像：public/images/hero/edit-bg.JPG を想定（編集ソフト画面や作業風景など） */}
         <Image 
-          src="/images/hero/web-bg.jpg" 
-          alt="ホームページ制作 背景"
+          src="/images/hero/edit-bg.jpg" 
+          alt="動画編集 背景"
           fill
           className="object-cover transition-transform duration-1000 group-hover:scale-110"
           sizes="50vw"
@@ -96,18 +96,18 @@ export default function Hero() {
             </div>
 
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-[#1A202C] mb-6">
-              HP・サイト制作
+              動画編集
             </h2>
             
             <p className="max-w-xs md:max-w-sm text-sm md:text-base text-[#4A5568] leading-relaxed mb-10 font-medium">
-              理系的な論理設計で「集客」を最大化。文章作成からNext.js実装まで、丸投げでの依頼も可能です。
+              素材をお送りいただくだけでOK。撮影なしの編集単体のご依頼も歓迎です。テロップ・BGM・カットまで丸ごとお任せください。
             </p>
             
             <Link 
-              href="#web" 
+              href="#edit" 
               className="inline-flex items-center justify-center bg-[#007AFF] text-white px-8 py-4 text-xs font-black hover:bg-[#1A202C] transition-all duration-300 rounded-sm shadow-xl shadow-[#007AFF]/10"
             >
-              制作の詳細を見る
+              編集メニューを見る
             </Link>
           </motion.div>
         </div>

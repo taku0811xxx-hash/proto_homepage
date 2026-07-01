@@ -7,7 +7,8 @@ import Link from 'next/link';
 // 分割したコンポーネントをインポート
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Templates from './components/Templates';
+import Portfolio from './components/Portfolio';
+import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 
@@ -55,8 +56,8 @@ export default function ProtoOfficialPage() {
         <div className="text-2xl font-black tracking-tighter italic text-[#1A202C]">PROTO</div>
         <div className="hidden lg:flex gap-8 text-[11px] font-bold tracking-[0.1em] uppercase text-[#4A5568] items-center">
           <a href="#visual" className="hover:text-[#007AFF] transition-colors">撮影</a>
-          <a href="#web" className="hover:text-[#007AFF] transition-colors">Web制作</a>
-          <a href="#models" className="hover:text-[#007AFF] transition-colors">webテンプレート</a>
+          <a href="#edit" className="hover:text-[#007AFF] transition-colors">動画編集</a>
+          <a href="#works" className="hover:text-[#007AFF] transition-colors">作品集</a>
           <Link href="/blog" className="hover:text-[#007AFF] transition-colors">ブログ</Link>
           <a href="#profile" className="hover:text-[#007AFF] transition-colors">プロフィール</a>
           <a href="#pricing" className="hover:text-[#007AFF] transition-colors">料金表</a>
@@ -68,9 +69,9 @@ export default function ProtoOfficialPage() {
         <div className="relative z-10 pt-20">
           <Hero />
           <Services />
-          <Templates />
+          <Portfolio />
 
-          {/* 7. Profile Section - 親しみやすいホワイトレイアウト */}
+          {/* 7. Profile Section */}
           <section id="profile" className="py-32 px-8 md:px-24 bg-white border-y border-slate-100">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
               
@@ -79,7 +80,7 @@ export default function ProtoOfficialPage() {
                 <span className="text-slate-200 font-black text-[12rem] absolute -bottom-10 -right-5 italic select-none group-hover:text-[#007AFF]/10 transition-colors duration-700">P</span>
                 <div className="relative z-10 text-center">
                    <div className="w-12 h-1 bg-[#007AFF] mx-auto mb-6 rounded-full" />
-                   <p className="font-bold tracking-widest text-xs text-[#4A5568] uppercase">Owner / Engineer</p>
+                   <p className="font-bold tracking-widest text-xs text-[#4A5568] uppercase">Photographer / Editor</p>
                 </div>
               </div>
 
@@ -88,7 +89,7 @@ export default function ProtoOfficialPage() {
                   Founder Profile
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 leading-tight text-[#1A202C]">
-                  あなたの「想い」を、<br />
+                  あなたの「一瞬」を、<br />
                   <span className="relative inline-block text-[#007AFF]">
                     一番近くで形にする。
                     <motion.span 
@@ -100,13 +101,15 @@ export default function ProtoOfficialPage() {
                   </span>
                 </h2>
                 <div className="space-y-6 text-[#4A5568] text-base md:text-lg leading-relaxed font-medium">
-                  <p>1995年生まれ。理系大学院で培った論理的な思考と、テレビ局での5年間にわたる報道技術職の経験。一分一秒を争う現場で磨いた「伝える」ための技術が、私のクリエイティブの核です。</p>
-                  <p>現在は「Proto」として、最新のWeb技術（Next.js）とプロの視覚表現（写真・動画撮影）を掛け合わせ、個人事業主や店舗オーナー様の挑戦に伴走しています。</p>
-                  <p>「何から手をつければいいか分からない」という方もご安心ください。難しい言葉は使わず、あなたのビジネスの魅力を引き出すための最善の戦略を、一緒に、論理的に構築します。</p>
+                  <p>1995年生まれ。テレビ局での5年間にわたる報道技術職の経験で、一分一秒を争う現場で「伝える」ための撮影・編集技術を磨きました。</p>
+                  <p>現在は「PROTO」として調布・仙川エリアを拠点に、企業のPR動画から結婚式・イベント・家族撮影まで、撮影と編集をワンストップで対応しています。ココナラでは65件以上のご依頼をいただいてきました。</p>
+                  <p>撮影のみ、編集のみのご依頼も歓迎です。「何から相談すればいいか分からない」という方もご安心ください。まずはお気軽にご相談ください。</p>
                 </div>
               </div>
             </div>
           </section>
+
+          <Testimonials />
 
           {/* 8. Blog Section */}
           <section id="blog" className="py-32 px-8 md:px-24">
@@ -122,10 +125,12 @@ export default function ProtoOfficialPage() {
               </div>
               
               <div className="grid md:grid-cols-3 gap-8">
+                {/* 注意: 下記3件はトップページ表示用のプレビューです。/blog/[id] の実ページ(app/blog/data.ts)も
+                    同じidで用意しないとリンク先が404になります。data.tsは今回未編集のため、後で合わせて更新してください。 */}
                 {[
-                  { id: 'sengawa-seo-2026', date: '2026.05.11', cat: 'SEO', title: '仙川周辺でホームページ制作を検討中の方へ。集客できるサイトの条件' },
-                  { id: 'visual-strategy', date: '2026.04.28', cat: 'Visual', title: 'プロフィール写真一枚で成約率は変わる。TV局で学んだ視覚戦略' },
-                  { id: 'nextjs-logic', date: '2026.04.15', cat: 'Web', title: 'なぜNext.jsなのか？個人事業主が最新技術を導入すべき理由' },
+                  { id: 'sengawa-shooting-2026', date: '2026.05.11', cat: 'Shooting', title: '仙川・調布で出張撮影を頼むなら知っておきたい3つのポイント' },
+                  { id: 'video-editing-request', date: '2026.04.28', cat: 'Editing', title: '動画編集だけ依頼したい人へ。素材の送り方と料金の目安' },
+                  { id: 'pr-video-tv-technique', date: '2026.04.15', cat: 'PR Video', title: 'テレビ局の現場で学んだ「伝わるPR動画」のつくり方' },
                 ].map((post, i) => (
                   <Link href={`/blog/${post.id}`} key={i}>
                     <motion.article 
@@ -152,10 +157,10 @@ export default function ProtoOfficialPage() {
               <h2 className="text-5xl md:text-6xl font-black tracking-tighter italic uppercase mb-20 text-center text-[#1A202C]">FAQ.</h2>
               <div className="space-y-6">
                 {[
-                  { q: '撮影とWeb制作をセットでお願いできますか？', a: 'もちろん可能です。ビジュアルとWebサイトを一貫して制作することで、ブランドの統一感が高まります。セット割引もございますので、ぜひご相談ください。' },
-                  { q: '制作後の修正はどの程度可能ですか？', a: '月額管理プラン（任意）をご利用の場合、テキスト修正や写真の差し替えは月1回まで無償で承ります。運用中の「ちょっと変えたい」に迅速に対応します。' },
-                  { q: '支払い方法を教えてください？', a: '銀行振込のほか、クレジットカード決済にも対応しております。制作費の着手金として50%、納品後に残りの50%をいただく形が一般的ですが、柔軟に調整可能です。' },
-                  { q: 'なぜこの価格で高品質なサイトが作れるのですか？', a: '独自開発のテンプレートをベースに制作工程を徹底的に効率化しているからです。浮いたコストをお客様に還元しつつ、最新技術（Next.js）を提供します。' },
+                  { q: '撮影なしで動画編集だけお願いできますか?', a: 'もちろん可能です。撮影済みの素材データをお送りいただくだけで、テロップ・BGM・カット編集まで対応します。' },
+                  { q: '撮影と編集をセットでお願いできますか?', a: 'はい、企業様には特に撮影+編集のワンストッププランが人気です。企画から納品まで一貫して対応するため、意図のズレが出にくいメリットがあります。' },
+                  { q: '対応エリアはどこまでですか?', a: '調布・仙川を拠点に、都内は交通費無料で対応しています。都外への出張も可能で、その場合は実費を別途ご請求します。' },
+                  { q: '納品後の修正はどの程度可能ですか?', a: '動画編集の修正は2回まで無料で対応します。3回目以降は1回¥3,000で承ります。' },
                 ].map((item, i) => (
                   <div key={i} className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-md transition-all duration-300">
                     <h3 className="text-lg md:text-xl font-bold mb-4 flex gap-4 text-[#1A202C]"><span className="text-[#007AFF]">Q.</span>{item.q}</h3>

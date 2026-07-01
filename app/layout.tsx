@@ -27,19 +27,19 @@ const geistMono = Geist_Mono({
 // PROTO専用のメタデータ設定
 export const metadata: Metadata = {
   title: {
-    default: "PROTO | 調布・仙川エリアの写真・動画撮影、魅力を伝えるホームページ制作",
+    default: "PROTO | 調布・仙川エリアの撮影・動画編集",
     template: "%s | PROTO"
   },
-  description: "テレビ局出身の技術者が、論理的なSEO戦略と圧倒的な視覚表現で「選ばれる」サイトを構築。調布・仙川エリアを中心に、HP制作からプロによる撮影まで一貫サポート。",
-  keywords: ["仙川", "ホームページ制作", "出張撮影", "動画制作", "PROTO", "調布市", "個人事業主"],
+  description: "テレビ局出身の技術者が、撮影から動画編集まで一貫対応。調布・仙川エリアを中心に、企業のPR動画から結婚式・イベント・家族撮影まで承ります。編集のみのご依頼も歓迎です。",
+  keywords: ["仙川", "出張撮影", "動画編集", "PR動画制作", "PROTO", "調布市", "結婚式 撮影", "動画編集 フリーランス"],
   
   verification: {
     google: "eu6zDE4BF-cGlA51JSfS9ONFf4_mnRTpGiSw-80OL1c",
   },
 
   openGraph: {
-    title: "PROTO | 仙川の制作・撮影スタジオ",
-    description: "テレビ局の技術を、あなたのビジネスに。論理的な戦略で成果を最大化します。",
+    title: "PROTO | 仙川の撮影・動画編集",
+    description: "テレビ局出身の技術力で、あなたの一瞬とビジネスの魅力を形にします。",
     url: "https://proto-visual.com",
     siteName: "PROTO",
     locale: "ja_JP",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PROTO | 仙川 of ホームページ制作・撮影",
-    description: "テレビ局出身の視覚表現力 × 論理的なSEO戦略",
+    title: "PROTO | 仙川の撮影・動画編集",
+    description: "テレビ局出身の視覚表現力 × 動画編集力。撮影のみ・編集のみのご依頼も歓迎。",
   },
 };
 

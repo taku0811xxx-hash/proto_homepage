@@ -57,9 +57,10 @@ export default function Contact() {
               className="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-[#007AFF] text-[#1A202C] appearance-none cursor-pointer font-medium"
             >
               <option value="" disabled>お問い合わせ内容を選択</option>
-              <option value="Web Production">ホームページ制作</option>
-              <option value="Visual Production">写真・動画撮影</option>
-              <option value="Hybrid Plan">Hybrid Plan (Web + 撮影)</option>
+              <option value="Photo Video Shooting">写真・動画撮影</option>
+              <option value="Video Editing">動画編集(編集のみ)</option>
+              <option value="One Stop Plan">撮影+編集 ワンストップ</option>
+              <option value="Other">その他・ご相談</option>
             </select>
             <div className="absolute right-0 bottom-5 pointer-events-none text-slate-400">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

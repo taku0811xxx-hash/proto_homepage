@@ -70,9 +70,9 @@ export default function Services() {
             </p>
             <div className="grid grid-cols-1 gap-6 text-[#1A202C] mb-12">
               {[
-                { title: "家族・ライフイベント", tags: "七五三 / 記念撮影 / イベント" },
-                { title: "ビジネス・プロフィール", tags: "ポートレート / コーポレート" },
-                { title: "ブランド・映像制作", tags: "PR動画制作 / WEB素材撮影" },
+                { title: "結婚式・イベント", tags: "前撮り / 挙式・披露宴 / パーティー" },
+                { title: "家族・ライフイベント", tags: "七五三 / 記念撮影 / 出張撮影" },
+                { title: "企業・ブランド撮影", tags: "PR動画 / ポートレート / 商品撮影" },
               ].map((item, i) => (
                 <div key={i} className="border-l-4 border-slate-100 pl-6 group hover:border-[#007AFF] transition-all duration-300">
                   <h3 className="text-lg font-bold mb-1">{item.title}</h3>
@@ -115,8 +115,8 @@ export default function Services() {
         </motion.div>
       </section>
 
-      {/* 02. ホームページ制作セクション */}
-      <section id="web" className="py-40 px-8 md:px-24 bg-[#F8FAFC]">
+      {/* 02. 動画編集セクション */}
+      <section id="edit" className="py-40 px-8 md:px-24 bg-[#F8FAFC]">
         <motion.div 
           initial="hidden" 
           whileInView="visible" 
@@ -125,60 +125,53 @@ export default function Services() {
           className="max-w-7xl mx-auto flex flex-col gap-12"
         >
           <div className="grid md:grid-cols-2 gap-20 items-center mb-10">
-            <motion.div variants={fadeInUp} className="order-2 md:order-1 relative aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-2xl group border border-slate-200">
-              <Image 
-                src="/images/web/web-hero.jpg"
-                alt="Web Development"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-bl from-[#007AFF]/10 to-transparent"></div>
+            <motion.div variants={fadeInUp} className="order-2 md:order-1 relative aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-2xl group border border-slate-200 flex items-center justify-center">
+              {/* 編集事例の動画/画像を差し込み予定。現状はプレースホルダー */}
+              <span className="text-slate-300 font-black text-6xl italic uppercase select-none">EDIT</span>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="order-1 md:order-2">
               <div className="inline-flex items-center gap-4 mb-8">
                 <span className="bg-[#007AFF] text-white font-black text-sm px-4 py-1 rounded-sm tracking-tighter uppercase">Service 02</span>
                 <span className="text-[#1A202C] font-black text-2xl md:text-3xl tracking-tighter border-b-4 border-[#007AFF] pb-1">
-                  ホームページ制作
+                  動画編集
                 </span>
               </div>
 
               <h2 className="text-5xl md:text-6xl font-black tracking-tighter mb-8 leading-none text-[#1A202C]">
-                思考を<br />
-                <span>構造へ落とし込む</span>
+                素材を<br />
+                <span>伝わる映像に</span>
               </h2>
               <p className="text-[#4A5568] text-lg leading-relaxed mb-10 font-medium">
-                理系的な論理構造と、報道現場で培った「伝える力」を掛け合わせ、集客のインフラとして機能するサイトを構築します。
+                撮影済みの素材をお送りいただくだけで、テロップ・BGM・カット編集まで一貫対応。ココナラでの実績65件以上、撮影なしの編集単体のご依頼も歓迎です。
               </p>
               
-              {/* リンク先を #pricing に修正 */}
               <Link 
                 href="#pricing" 
                 className="inline-flex items-center justify-center bg-[#007AFF] text-white px-10 py-5 text-[11px] font-black uppercase tracking-widest hover:bg-[#1A202C] transition-all duration-500 rounded-sm shadow-xl shadow-[#007AFF]/20"
               >
-                制作プランと料金を見る →
+                編集プランと料金を見る →
               </Link>
             </motion.div>
           </div>
 
-          {/* 強みのカード部分（省略せず維持） */}
+          {/* 強みのカード部分 */}
           <div className="grid md:grid-cols-3 gap-8 pt-10">
             {[
               {
-                title: "完全丸投げOKの文章作成",
-                highlight: "取材から執筆まで代行",
-                desc: "基本情報さえいただければ、プロの視点で魅力的なキャッチコピーや紹介文をすべて構築。オーナー様の手を止めることなく、高品質なコンテンツを完成させます。"
+                title: "編集のみの依頼もOK",
+                highlight: "撮影データを送るだけ",
+                desc: "ご自身やチームで撮影した素材でも大丈夫。データをお送りいただくだけで、テロップ・BGM・カット編集まで仕上げます。"
               },
               {
-                title: "逆取材スタイルの強み発見",
-                highlight: "報道現場の取材力を応用",
-                desc: "テレビ局の報道現場で培った独自のヒアリング技術を用い、ご自身では気づけなかった「本当の強み」を第三者の視点で深掘りし、強力な言語化を行います。"
+                title: "ショート・ロング両対応",
+                highlight: "縦型SNS動画から横型PR動画まで",
+                desc: "60秒以内の縦型ショート動画から、5分前後の横型ロング動画まで、用途に合わせた編集メニューをご用意しています。"
               },
               {
-                title: "戦略的SEO・論理的設計",
-                highlight: "Next.jsによる圧倒的な高速化",
-                desc: "理系的なアプローチでサイトの「性能」を追求。Next.jsを用いた高速表示と、最適化された論理的構造により、成果を出し続ける集客の土台を作ります。"
+                title: "ココナラ実績65件以上",
+                highlight: "報道現場で磨いた伝える技術",
+                desc: "テレビ局の報道技術職で培った「伝わる編集」の考え方をベースに、ココナラで65件以上のご依頼を承ってきました。"
               }
             ].map((card, i) => (
               <motion.div 
@@ -198,8 +191,8 @@ export default function Services() {
         </motion.div>
       </section>
 
-      {/* 03. セットプラン */}
-      <section id="branding" className="py-40 px-8 md:px-24 bg-[#C0CDDC] relative overflow-hidden">
+      {/* 03. ワンストッププラン（企業向け） */}
+      <section id="onestop" className="py-40 px-8 md:px-24 bg-[#C0CDDC] relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/10 text-[20vw] font-black italic whitespace-nowrap select-none pointer-events-none uppercase">
           Complete
         </div>
@@ -213,25 +206,25 @@ export default function Services() {
         >
           <span className="text-black font-bold text-[10px] tracking-[0.5em] uppercase mb-8 inline-block bg-white px-4 py-1 rounded-sm shadow-xl">Best Choice for Business</span>
           <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-[1.3]">
-            表現と機能を<br />
-            ひとつに
+            撮影も編集も<br />
+            丸ごとお任せ
           </h2>
           
           <div className="bg-white/10 p-8 md:p-12 backdrop-blur-xl border border-white/20 text-left rounded-sm shadow-2xl mt-12">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-6 border-b border-white/20 pb-8 text-white">
-              <h3 className="text-2xl md:text-3xl font-bold italic uppercase tracking-tighter text-[#1A202C]">撮影 + Web 制作セット</h3>
-              <div className="text-xs font-bold tracking-widest bg-white text-[#007AFF] px-4 py-2 uppercase rounded-sm">推奨プラン</div>
+              <h3 className="text-2xl md:text-3xl font-bold italic uppercase tracking-tighter text-[#1A202C]">撮影 + 編集 ワンストップ</h3>
+              <div className="text-xs font-bold tracking-widest bg-white text-[#007AFF] px-4 py-2 uppercase rounded-sm">企業様に人気</div>
             </div>
             <div className="grid md:grid-cols-2 gap-10">
               <p className="text-black/90 text-sm leading-loose font-medium">
-                撮影とサイト制作を一貫して行うことで、デザインと素材の「ズレ」をゼロにします。一貫したトーン＆マナーで、あなたのビジネスに圧倒的な信頼感をもたらす最強の選択肢です。
+                企画・撮影・編集を同じ担当者が一貫して行うことで、意図のズレをゼロに。PR動画・商品紹介・イベント記録など、企画から納品まで丸投げでご依頼いただけます。
               </p>
               <ul className="space-y-3">
                 {[
-                  "プロによる素材撮影一式",
-                  "全ページ文章作成（丸投げOK）",
-                  "Next.js 高速サイト構築",
-                  "ドメイン・保守管理サポート"
+                  "ヒアリング・企画から対応",
+                  "プロによる撮影一式",
+                  "テロップ・BGM込みの編集",
+                  "修正2回まで無料"
                 ].map((list, i) => (
                   <li key={i} className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#1A202C]">
                     <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,12 +236,11 @@ export default function Services() {
               </ul>
             </div>
             <div className="mt-12 text-center">
-              {/* リンク先を #pricing に修正 */}
               <Link 
                 href="#pricing" 
                 className="inline-block bg-white text-[#007AFF] px-12 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-[#1A202C] hover:text-white transition-all duration-300 rounded-sm shadow-xl"
               >
-                セットプランの価格を確認する
+                ワンストッププランを確認する
               </Link>
             </div>
           </div>
