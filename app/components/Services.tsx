@@ -37,7 +37,7 @@ export default function Services() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % visualImages.length);
-    }, 2500);
+    }, 4500);
     return () => clearInterval(timer);
   }, [visualImages.length]);
 

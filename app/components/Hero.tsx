@@ -52,8 +52,8 @@ export default function Hero() {
               <span className="text-[#C1692B] font-bold text-sm tracking-widest uppercase">Service 01</span>
             </div>
             
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-[#1A202C] mb-6">
-              写真・動画撮影<br />
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-[#1A202C] mb-6 whitespace-nowrap">
+              写真・動画撮影
             </h2>
             
             <p className="max-w-xs md:max-w-sm text-sm md:text-base text-[#4A5568] leading-relaxed mb-10 font-medium">
@@ -96,7 +96,7 @@ export default function Hero() {
               <span className="text-[#C1692B] font-bold text-sm tracking-widest uppercase">Service 02</span>
             </div>
 
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-[#1A202C] mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-[#1A202C] mb-6 whitespace-nowrap">
               動画編集
             </h2>
             
